@@ -13,9 +13,16 @@ namespace DatabaseMaker
     {
         private int childFormNumber = 0;
 
+        private frmCategory category;
+        private frmPlatform platform;
+
         public MainForm()
         {
             InitializeComponent();
+            category = new frmCategory();
+            category.MdiParent = this;
+            platform = new frmPlatform();
+            platform.MdiParent = this;
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -101,6 +108,12 @@ namespace DatabaseMaker
             {
                 childForm.Close();
             }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            category.Show();
+            platform.Show();
         }
     }
 }
