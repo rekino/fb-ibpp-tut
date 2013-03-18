@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmItem));
             System.Windows.Forms.Label iDLabel;
             System.Windows.Forms.Label nAMELabel;
             System.Windows.Forms.Label dESCRIPTIONLabel;
@@ -42,25 +41,11 @@
             System.Windows.Forms.Label pATHLabel;
             System.Windows.Forms.Label hELPLabel;
             System.Windows.Forms.Label tAGSLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmItem));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataSet = new DatabaseMaker.DataSet();
-            this.iTEMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iTEMTableAdapter = new DatabaseMaker.DataSetTableAdapters.ITEMTableAdapter();
-            this.tableAdapterManager = new DatabaseMaker.DataSetTableAdapters.TableAdapterManager();
-            this.iTEMBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.iTEMBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.iDTextBox = new System.Windows.Forms.TextBox();
+            this.iTEMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet = new DatabaseMaker.DataSet();
             this.nAMETextBox = new System.Windows.Forms.TextBox();
             this.dESCRIPTIONTextBox = new System.Windows.Forms.TextBox();
             this.iCONPictureBox = new System.Windows.Forms.PictureBox();
@@ -74,6 +59,21 @@
             this.tAGSTextBox = new System.Windows.Forms.TextBox();
             this.btnIconBrowse = new System.Windows.Forms.Button();
             this.btnImageBrowse = new System.Windows.Forms.Button();
+            this.iTEMTableAdapter = new DatabaseMaker.DataSetTableAdapters.ITEMTableAdapter();
+            this.tableAdapterManager = new DatabaseMaker.DataSetTableAdapters.TableAdapterManager();
+            this.iTEMBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.iTEMBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             iDLabel = new System.Windows.Forms.Label();
             nAMELabel = new System.Windows.Forms.Label();
             dESCRIPTIONLabel = new System.Windows.Forms.Label();
@@ -87,13 +87,121 @@
             hELPLabel = new System.Windows.Forms.Label();
             tAGSLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iTEMBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iTEMBindingNavigator)).BeginInit();
-            this.iTEMBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iCONPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iMAGEPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iTEMBindingNavigator)).BeginInit();
+            this.iTEMBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // iDLabel
+            // 
+            iDLabel.AutoSize = true;
+            iDLabel.Location = new System.Drawing.Point(3, 0);
+            iDLabel.Name = "iDLabel";
+            iDLabel.Size = new System.Drawing.Size(21, 13);
+            iDLabel.TabIndex = 0;
+            iDLabel.Text = "ID:";
+            // 
+            // nAMELabel
+            // 
+            nAMELabel.AutoSize = true;
+            nAMELabel.Location = new System.Drawing.Point(296, 0);
+            nAMELabel.Name = "nAMELabel";
+            nAMELabel.Size = new System.Drawing.Size(41, 13);
+            nAMELabel.TabIndex = 2;
+            nAMELabel.Text = "NAME:";
+            // 
+            // dESCRIPTIONLabel
+            // 
+            dESCRIPTIONLabel.AutoSize = true;
+            dESCRIPTIONLabel.Location = new System.Drawing.Point(3, 25);
+            dESCRIPTIONLabel.Name = "dESCRIPTIONLabel";
+            dESCRIPTIONLabel.Size = new System.Drawing.Size(83, 13);
+            dESCRIPTIONLabel.TabIndex = 4;
+            dESCRIPTIONLabel.Text = "DESCRIPTION:";
+            // 
+            // iCONLabel
+            // 
+            iCONLabel.AutoSize = true;
+            iCONLabel.Location = new System.Drawing.Point(296, 25);
+            iCONLabel.Name = "iCONLabel";
+            iCONLabel.Size = new System.Drawing.Size(36, 13);
+            iCONLabel.TabIndex = 6;
+            iCONLabel.Text = "ICON:";
+            // 
+            // cATEGORYLabel
+            // 
+            cATEGORYLabel.AutoSize = true;
+            cATEGORYLabel.Location = new System.Drawing.Point(3, 95);
+            cATEGORYLabel.Name = "cATEGORYLabel";
+            cATEGORYLabel.Size = new System.Drawing.Size(69, 13);
+            cATEGORYLabel.TabIndex = 8;
+            cATEGORYLabel.Text = "CATEGORY:";
+            // 
+            // iMAGELabel
+            // 
+            iMAGELabel.AutoSize = true;
+            iMAGELabel.Location = new System.Drawing.Point(296, 95);
+            iMAGELabel.Name = "iMAGELabel";
+            iMAGELabel.Size = new System.Drawing.Size(44, 13);
+            iMAGELabel.TabIndex = 10;
+            iMAGELabel.Text = "IMAGE:";
+            // 
+            // vERSIONLabel
+            // 
+            vERSIONLabel.AutoSize = true;
+            vERSIONLabel.Location = new System.Drawing.Point(3, 182);
+            vERSIONLabel.Name = "vERSIONLabel";
+            vERSIONLabel.Size = new System.Drawing.Size(58, 13);
+            vERSIONLabel.TabIndex = 12;
+            vERSIONLabel.Text = "VERSION:";
+            // 
+            // fILE_SIZELabel
+            // 
+            fILE_SIZELabel.AutoSize = true;
+            fILE_SIZELabel.Location = new System.Drawing.Point(296, 182);
+            fILE_SIZELabel.Name = "fILE_SIZELabel";
+            fILE_SIZELabel.Size = new System.Drawing.Size(59, 13);
+            fILE_SIZELabel.TabIndex = 14;
+            fILE_SIZELabel.Text = "FILE SIZE:";
+            // 
+            // dISKLabel
+            // 
+            dISKLabel.AutoSize = true;
+            dISKLabel.Location = new System.Drawing.Point(3, 207);
+            dISKLabel.Name = "dISKLabel";
+            dISKLabel.Size = new System.Drawing.Size(35, 13);
+            dISKLabel.TabIndex = 16;
+            dISKLabel.Text = "DISK:";
+            // 
+            // pATHLabel
+            // 
+            pATHLabel.AutoSize = true;
+            pATHLabel.Location = new System.Drawing.Point(296, 207);
+            pATHLabel.Name = "pATHLabel";
+            pATHLabel.Size = new System.Drawing.Size(39, 13);
+            pATHLabel.TabIndex = 18;
+            pATHLabel.Text = "PATH:";
+            // 
+            // hELPLabel
+            // 
+            hELPLabel.AutoSize = true;
+            hELPLabel.Location = new System.Drawing.Point(3, 232);
+            hELPLabel.Name = "hELPLabel";
+            hELPLabel.Size = new System.Drawing.Size(38, 13);
+            hELPLabel.TabIndex = 20;
+            hELPLabel.Text = "HELP:";
+            // 
+            // tAGSLabel
+            // 
+            tAGSLabel.AutoSize = true;
+            tAGSLabel.Location = new System.Drawing.Point(296, 232);
+            tAGSLabel.Name = "tAGSLabel";
+            tAGSLabel.Size = new System.Drawing.Size(39, 13);
+            tAGSLabel.TabIndex = 22;
+            tAGSLabel.Text = "TAGS:";
             // 
             // tableLayoutPanel1
             // 
@@ -142,15 +250,142 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(648, 370);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // dataSet
+            // iDTextBox
             // 
-            this.dataSet.DataSetName = "DataSet";
-            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "ID", true));
+            this.iDTextBox.Location = new System.Drawing.Point(96, 3);
+            this.iDTextBox.Name = "iDTextBox";
+            this.iDTextBox.Size = new System.Drawing.Size(120, 20);
+            this.iDTextBox.TabIndex = 1;
             // 
             // iTEMBindingSource
             // 
             this.iTEMBindingSource.DataMember = "ITEM";
             this.iTEMBindingSource.DataSource = this.dataSet;
+            // 
+            // dataSet
+            // 
+            this.dataSet.DataSetName = "DataSet";
+            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nAMETextBox
+            // 
+            this.nAMETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "NAME", true));
+            this.nAMETextBox.Location = new System.Drawing.Point(367, 3);
+            this.nAMETextBox.Name = "nAMETextBox";
+            this.nAMETextBox.Size = new System.Drawing.Size(120, 20);
+            this.nAMETextBox.TabIndex = 3;
+            // 
+            // dESCRIPTIONTextBox
+            // 
+            this.dESCRIPTIONTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "DESCRIPTION", true));
+            this.dESCRIPTIONTextBox.Location = new System.Drawing.Point(96, 28);
+            this.dESCRIPTIONTextBox.Name = "dESCRIPTIONTextBox";
+            this.dESCRIPTIONTextBox.Size = new System.Drawing.Size(120, 20);
+            this.dESCRIPTIONTextBox.TabIndex = 5;
+            // 
+            // iCONPictureBox
+            // 
+            this.iCONPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.iTEMBindingSource, "ICON", true));
+            this.iCONPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.iCONPictureBox.Location = new System.Drawing.Point(367, 28);
+            this.iCONPictureBox.Name = "iCONPictureBox";
+            this.iCONPictureBox.Size = new System.Drawing.Size(194, 64);
+            this.iCONPictureBox.TabIndex = 7;
+            this.iCONPictureBox.TabStop = false;
+            // 
+            // cATEGORYListBox
+            // 
+            this.cATEGORYListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.iTEMBindingSource, "CATEGORY", true));
+            this.cATEGORYListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cATEGORYListBox.FormattingEnabled = true;
+            this.cATEGORYListBox.Location = new System.Drawing.Point(96, 98);
+            this.cATEGORYListBox.Name = "cATEGORYListBox";
+            this.cATEGORYListBox.Size = new System.Drawing.Size(194, 81);
+            this.cATEGORYListBox.TabIndex = 9;
+            // 
+            // iMAGEPictureBox
+            // 
+            this.iMAGEPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.iTEMBindingSource, "IMAGE", true));
+            this.iMAGEPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.iMAGEPictureBox.Location = new System.Drawing.Point(367, 98);
+            this.iMAGEPictureBox.Name = "iMAGEPictureBox";
+            this.iMAGEPictureBox.Size = new System.Drawing.Size(194, 81);
+            this.iMAGEPictureBox.TabIndex = 11;
+            this.iMAGEPictureBox.TabStop = false;
+            // 
+            // vERSIONTextBox
+            // 
+            this.vERSIONTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "VERSION", true));
+            this.vERSIONTextBox.Location = new System.Drawing.Point(96, 185);
+            this.vERSIONTextBox.Name = "vERSIONTextBox";
+            this.vERSIONTextBox.Size = new System.Drawing.Size(120, 20);
+            this.vERSIONTextBox.TabIndex = 13;
+            // 
+            // fILE_SIZETextBox
+            // 
+            this.fILE_SIZETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "FILE_SIZE", true));
+            this.fILE_SIZETextBox.Location = new System.Drawing.Point(367, 185);
+            this.fILE_SIZETextBox.Name = "fILE_SIZETextBox";
+            this.fILE_SIZETextBox.Size = new System.Drawing.Size(120, 20);
+            this.fILE_SIZETextBox.TabIndex = 15;
+            // 
+            // dISKTextBox
+            // 
+            this.dISKTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "DISK", true));
+            this.dISKTextBox.Location = new System.Drawing.Point(96, 210);
+            this.dISKTextBox.Name = "dISKTextBox";
+            this.dISKTextBox.Size = new System.Drawing.Size(120, 20);
+            this.dISKTextBox.TabIndex = 17;
+            // 
+            // pATHTextBox
+            // 
+            this.pATHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "PATH", true));
+            this.pATHTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pATHTextBox.Location = new System.Drawing.Point(367, 210);
+            this.pATHTextBox.Name = "pATHTextBox";
+            this.pATHTextBox.Size = new System.Drawing.Size(194, 20);
+            this.pATHTextBox.TabIndex = 19;
+            // 
+            // hELPTextBox
+            // 
+            this.hELPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "HELP", true));
+            this.hELPTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hELPTextBox.Location = new System.Drawing.Point(96, 235);
+            this.hELPTextBox.Multiline = true;
+            this.hELPTextBox.Name = "hELPTextBox";
+            this.hELPTextBox.Size = new System.Drawing.Size(194, 132);
+            this.hELPTextBox.TabIndex = 21;
+            // 
+            // tAGSTextBox
+            // 
+            this.tAGSTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "TAGS", true));
+            this.tAGSTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tAGSTextBox.Location = new System.Drawing.Point(367, 235);
+            this.tAGSTextBox.Multiline = true;
+            this.tAGSTextBox.Name = "tAGSTextBox";
+            this.tAGSTextBox.Size = new System.Drawing.Size(194, 132);
+            this.tAGSTextBox.TabIndex = 23;
+            // 
+            // btnIconBrowse
+            // 
+            this.btnIconBrowse.Location = new System.Drawing.Point(567, 28);
+            this.btnIconBrowse.Name = "btnIconBrowse";
+            this.btnIconBrowse.Size = new System.Drawing.Size(75, 23);
+            this.btnIconBrowse.TabIndex = 24;
+            this.btnIconBrowse.Text = "Browse";
+            this.btnIconBrowse.UseVisualStyleBackColor = true;
+            this.btnIconBrowse.Click += new System.EventHandler(this.btnIconBrowse_Click);
+            // 
+            // btnImageBrowse
+            // 
+            this.btnImageBrowse.Location = new System.Drawing.Point(567, 98);
+            this.btnImageBrowse.Name = "btnImageBrowse";
+            this.btnImageBrowse.Size = new System.Drawing.Size(75, 23);
+            this.btnImageBrowse.TabIndex = 25;
+            this.btnImageBrowse.Text = "Browse";
+            this.btnImageBrowse.UseVisualStyleBackColor = true;
+            this.btnImageBrowse.Click += new System.EventHandler(this.btnImageBrowse_Click);
             // 
             // iTEMTableAdapter
             // 
@@ -195,6 +430,31 @@
             this.iTEMBindingNavigator.TabIndex = 1;
             this.iTEMBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -227,16 +487,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -259,26 +512,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // iTEMBindingNavigatorSaveItem
             // 
@@ -287,240 +522,7 @@
             this.iTEMBindingNavigatorSaveItem.Name = "iTEMBindingNavigatorSaveItem";
             this.iTEMBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.iTEMBindingNavigatorSaveItem.Text = "Save Data";
-            this.iTEMBindingNavigatorSaveItem.Click += new System.EventHandler(this.iTEMBindingNavigatorSaveItem_Click_1);
-            // 
-            // iDLabel
-            // 
-            iDLabel.AutoSize = true;
-            iDLabel.Location = new System.Drawing.Point(3, 0);
-            iDLabel.Name = "iDLabel";
-            iDLabel.Size = new System.Drawing.Size(21, 13);
-            iDLabel.TabIndex = 0;
-            iDLabel.Text = "ID:";
-            // 
-            // iDTextBox
-            // 
-            this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "ID", true));
-            this.iDTextBox.Location = new System.Drawing.Point(96, 3);
-            this.iDTextBox.Name = "iDTextBox";
-            this.iDTextBox.Size = new System.Drawing.Size(120, 20);
-            this.iDTextBox.TabIndex = 1;
-            // 
-            // nAMELabel
-            // 
-            nAMELabel.AutoSize = true;
-            nAMELabel.Location = new System.Drawing.Point(296, 0);
-            nAMELabel.Name = "nAMELabel";
-            nAMELabel.Size = new System.Drawing.Size(41, 13);
-            nAMELabel.TabIndex = 2;
-            nAMELabel.Text = "NAME:";
-            // 
-            // nAMETextBox
-            // 
-            this.nAMETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "NAME", true));
-            this.nAMETextBox.Location = new System.Drawing.Point(367, 3);
-            this.nAMETextBox.Name = "nAMETextBox";
-            this.nAMETextBox.Size = new System.Drawing.Size(120, 20);
-            this.nAMETextBox.TabIndex = 3;
-            // 
-            // dESCRIPTIONLabel
-            // 
-            dESCRIPTIONLabel.AutoSize = true;
-            dESCRIPTIONLabel.Location = new System.Drawing.Point(3, 25);
-            dESCRIPTIONLabel.Name = "dESCRIPTIONLabel";
-            dESCRIPTIONLabel.Size = new System.Drawing.Size(83, 13);
-            dESCRIPTIONLabel.TabIndex = 4;
-            dESCRIPTIONLabel.Text = "DESCRIPTION:";
-            // 
-            // dESCRIPTIONTextBox
-            // 
-            this.dESCRIPTIONTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "DESCRIPTION", true));
-            this.dESCRIPTIONTextBox.Location = new System.Drawing.Point(96, 28);
-            this.dESCRIPTIONTextBox.Name = "dESCRIPTIONTextBox";
-            this.dESCRIPTIONTextBox.Size = new System.Drawing.Size(120, 20);
-            this.dESCRIPTIONTextBox.TabIndex = 5;
-            // 
-            // iCONLabel
-            // 
-            iCONLabel.AutoSize = true;
-            iCONLabel.Location = new System.Drawing.Point(296, 25);
-            iCONLabel.Name = "iCONLabel";
-            iCONLabel.Size = new System.Drawing.Size(36, 13);
-            iCONLabel.TabIndex = 6;
-            iCONLabel.Text = "ICON:";
-            // 
-            // iCONPictureBox
-            // 
-            this.iCONPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.iTEMBindingSource, "ICON", true));
-            this.iCONPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.iCONPictureBox.Location = new System.Drawing.Point(367, 28);
-            this.iCONPictureBox.Name = "iCONPictureBox";
-            this.iCONPictureBox.Size = new System.Drawing.Size(194, 64);
-            this.iCONPictureBox.TabIndex = 7;
-            this.iCONPictureBox.TabStop = false;
-            // 
-            // cATEGORYLabel
-            // 
-            cATEGORYLabel.AutoSize = true;
-            cATEGORYLabel.Location = new System.Drawing.Point(3, 95);
-            cATEGORYLabel.Name = "cATEGORYLabel";
-            cATEGORYLabel.Size = new System.Drawing.Size(69, 13);
-            cATEGORYLabel.TabIndex = 8;
-            cATEGORYLabel.Text = "CATEGORY:";
-            // 
-            // cATEGORYListBox
-            // 
-            this.cATEGORYListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.iTEMBindingSource, "CATEGORY", true));
-            this.cATEGORYListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cATEGORYListBox.FormattingEnabled = true;
-            this.cATEGORYListBox.Location = new System.Drawing.Point(96, 98);
-            this.cATEGORYListBox.Name = "cATEGORYListBox";
-            this.cATEGORYListBox.Size = new System.Drawing.Size(194, 81);
-            this.cATEGORYListBox.TabIndex = 9;
-            // 
-            // iMAGELabel
-            // 
-            iMAGELabel.AutoSize = true;
-            iMAGELabel.Location = new System.Drawing.Point(296, 95);
-            iMAGELabel.Name = "iMAGELabel";
-            iMAGELabel.Size = new System.Drawing.Size(44, 13);
-            iMAGELabel.TabIndex = 10;
-            iMAGELabel.Text = "IMAGE:";
-            // 
-            // iMAGEPictureBox
-            // 
-            this.iMAGEPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.iTEMBindingSource, "IMAGE", true));
-            this.iMAGEPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.iMAGEPictureBox.Location = new System.Drawing.Point(367, 98);
-            this.iMAGEPictureBox.Name = "iMAGEPictureBox";
-            this.iMAGEPictureBox.Size = new System.Drawing.Size(194, 81);
-            this.iMAGEPictureBox.TabIndex = 11;
-            this.iMAGEPictureBox.TabStop = false;
-            // 
-            // vERSIONLabel
-            // 
-            vERSIONLabel.AutoSize = true;
-            vERSIONLabel.Location = new System.Drawing.Point(3, 182);
-            vERSIONLabel.Name = "vERSIONLabel";
-            vERSIONLabel.Size = new System.Drawing.Size(58, 13);
-            vERSIONLabel.TabIndex = 12;
-            vERSIONLabel.Text = "VERSION:";
-            // 
-            // vERSIONTextBox
-            // 
-            this.vERSIONTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "VERSION", true));
-            this.vERSIONTextBox.Location = new System.Drawing.Point(96, 185);
-            this.vERSIONTextBox.Name = "vERSIONTextBox";
-            this.vERSIONTextBox.Size = new System.Drawing.Size(120, 20);
-            this.vERSIONTextBox.TabIndex = 13;
-            // 
-            // fILE_SIZELabel
-            // 
-            fILE_SIZELabel.AutoSize = true;
-            fILE_SIZELabel.Location = new System.Drawing.Point(296, 182);
-            fILE_SIZELabel.Name = "fILE_SIZELabel";
-            fILE_SIZELabel.Size = new System.Drawing.Size(59, 13);
-            fILE_SIZELabel.TabIndex = 14;
-            fILE_SIZELabel.Text = "FILE SIZE:";
-            // 
-            // fILE_SIZETextBox
-            // 
-            this.fILE_SIZETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "FILE_SIZE", true));
-            this.fILE_SIZETextBox.Location = new System.Drawing.Point(367, 185);
-            this.fILE_SIZETextBox.Name = "fILE_SIZETextBox";
-            this.fILE_SIZETextBox.Size = new System.Drawing.Size(120, 20);
-            this.fILE_SIZETextBox.TabIndex = 15;
-            // 
-            // dISKLabel
-            // 
-            dISKLabel.AutoSize = true;
-            dISKLabel.Location = new System.Drawing.Point(3, 207);
-            dISKLabel.Name = "dISKLabel";
-            dISKLabel.Size = new System.Drawing.Size(35, 13);
-            dISKLabel.TabIndex = 16;
-            dISKLabel.Text = "DISK:";
-            // 
-            // dISKTextBox
-            // 
-            this.dISKTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "DISK", true));
-            this.dISKTextBox.Location = new System.Drawing.Point(96, 210);
-            this.dISKTextBox.Name = "dISKTextBox";
-            this.dISKTextBox.Size = new System.Drawing.Size(120, 20);
-            this.dISKTextBox.TabIndex = 17;
-            // 
-            // pATHLabel
-            // 
-            pATHLabel.AutoSize = true;
-            pATHLabel.Location = new System.Drawing.Point(296, 207);
-            pATHLabel.Name = "pATHLabel";
-            pATHLabel.Size = new System.Drawing.Size(39, 13);
-            pATHLabel.TabIndex = 18;
-            pATHLabel.Text = "PATH:";
-            // 
-            // pATHTextBox
-            // 
-            this.pATHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "PATH", true));
-            this.pATHTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pATHTextBox.Location = new System.Drawing.Point(367, 210);
-            this.pATHTextBox.Name = "pATHTextBox";
-            this.pATHTextBox.Size = new System.Drawing.Size(194, 20);
-            this.pATHTextBox.TabIndex = 19;
-            // 
-            // hELPLabel
-            // 
-            hELPLabel.AutoSize = true;
-            hELPLabel.Location = new System.Drawing.Point(3, 232);
-            hELPLabel.Name = "hELPLabel";
-            hELPLabel.Size = new System.Drawing.Size(38, 13);
-            hELPLabel.TabIndex = 20;
-            hELPLabel.Text = "HELP:";
-            // 
-            // hELPTextBox
-            // 
-            this.hELPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "HELP", true));
-            this.hELPTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hELPTextBox.Location = new System.Drawing.Point(96, 235);
-            this.hELPTextBox.Multiline = true;
-            this.hELPTextBox.Name = "hELPTextBox";
-            this.hELPTextBox.Size = new System.Drawing.Size(194, 132);
-            this.hELPTextBox.TabIndex = 21;
-            // 
-            // tAGSLabel
-            // 
-            tAGSLabel.AutoSize = true;
-            tAGSLabel.Location = new System.Drawing.Point(296, 232);
-            tAGSLabel.Name = "tAGSLabel";
-            tAGSLabel.Size = new System.Drawing.Size(39, 13);
-            tAGSLabel.TabIndex = 22;
-            tAGSLabel.Text = "TAGS:";
-            // 
-            // tAGSTextBox
-            // 
-            this.tAGSTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iTEMBindingSource, "TAGS", true));
-            this.tAGSTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tAGSTextBox.Location = new System.Drawing.Point(367, 235);
-            this.tAGSTextBox.Multiline = true;
-            this.tAGSTextBox.Name = "tAGSTextBox";
-            this.tAGSTextBox.Size = new System.Drawing.Size(194, 132);
-            this.tAGSTextBox.TabIndex = 23;
-            // 
-            // btnIconBrowse
-            // 
-            this.btnIconBrowse.Location = new System.Drawing.Point(567, 28);
-            this.btnIconBrowse.Name = "btnIconBrowse";
-            this.btnIconBrowse.Size = new System.Drawing.Size(75, 23);
-            this.btnIconBrowse.TabIndex = 24;
-            this.btnIconBrowse.Text = "Browse";
-            this.btnIconBrowse.UseVisualStyleBackColor = true;
-            // 
-            // btnImageBrowse
-            // 
-            this.btnImageBrowse.Location = new System.Drawing.Point(567, 98);
-            this.btnImageBrowse.Name = "btnImageBrowse";
-            this.btnImageBrowse.Size = new System.Drawing.Size(75, 23);
-            this.btnImageBrowse.TabIndex = 25;
-            this.btnImageBrowse.Text = "Browse";
-            this.btnImageBrowse.UseVisualStyleBackColor = true;
+            this.iTEMBindingNavigatorSaveItem.Click += new System.EventHandler(this.iTEMBindingNavigatorSaveItem_Click);
             // 
             // frmItem
             // 
@@ -534,13 +536,13 @@
             this.Load += new System.EventHandler(this.frmItem_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iTEMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iCONPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iMAGEPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iTEMBindingNavigator)).EndInit();
             this.iTEMBindingNavigator.ResumeLayout(false);
             this.iTEMBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iCONPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iMAGEPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

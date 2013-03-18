@@ -15,6 +15,7 @@ namespace DatabaseMaker
 
         private frmCategory category;
         private frmPlatform platform;
+        private frmItem item;
 
         public MainForm()
         {
@@ -23,6 +24,8 @@ namespace DatabaseMaker
             category.MdiParent = this;
             platform = new frmPlatform();
             platform.MdiParent = this;
+            item = new frmItem();
+            item.MdiParent = this;
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -114,6 +117,7 @@ namespace DatabaseMaker
         {
             category.Show();
             platform.Show();
+            item.Show();
         }
     }
 }
