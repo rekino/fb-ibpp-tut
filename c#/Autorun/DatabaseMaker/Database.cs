@@ -1,8 +1,8 @@
-﻿using System;
+﻿using FirebirdSql.Data.FirebirdClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DatabaseMaker
 {
@@ -10,23 +10,45 @@ namespace DatabaseMaker
     {
         public static Database Instance = new Database();
 
-        DatabaseMaker.DataSet ds;
-        DataSetTableAdapters.TableAdapterManager adapter;
+        FbConnection connection;
+        FbConnectionStringBuilder csBuilder;
 
-        DataSetTableAdapters.CATEGORYTableAdapter category;
-        DataSetTableAdapters.ITEM_PLATFORMTableAdapter itemPlatform;
-        DataSetTableAdapters.ITEMTableAdapter item;
-        DataSetTableAdapters.PLATFORMTableAdapter platform;
+        PlatformTableAdapter platform;
+        CategoryTableAdapter category;
+
+        internal CategoryTableAdapter Category
+        {
+            get { return category; }
+        }
+
+        internal PlatformTableAdapter Platform
+        {
+            get { return platform; }
+        }
 
         private Database()
         {
-            ds = new DataSet();
+            csBuilder = new FbConnectionStringBuilder();
+            csBuilder.Charset = "UTF8";
+            csBuilder.DataSource = "localhost";
+            csBuilder.Database = @"D:\AUTORUN_V1.1.fdb";
+            csBuilder.UserID = "SYSDBA";
+            csBuilder.Password = "masterkey";
 
-            category = new DataSetTableAdapters.CATEGORYTableAdapter();
-            itemPlatform = new DataSetTableAdapters.ITEM_PLATFORMTableAdapter();
-            item = new DataSetTableAdapters.ITEMTableAdapter();
-            platform = new DataSetTableAdapters.PLATFORMTableAdapter();
+            connection = new FbConnection(csBuilder.ConnectionString);
 
+            platform = new PlatformTableAdapter(connection);
+            category = new CategoryTableAdapter(connection);
+        }
+
+        public void OpenConnection()
+        {
+            connection.Open();
+        }
+
+        public void CloseConnection()
+        {
+            connection.Close();
         }
     }
 }

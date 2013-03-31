@@ -3,8 +3,4 @@ c#/Autorun/DatabaseMaker/bin/
 c#/Autorun/DatabaseMaker/obj/
 
 # CMake Files
-c++/AutorunLibrary/AutorunLibrary-build/CMakeCache.txt
-c++/AutorunLibrary/AutorunLibrary-build/CMakeFiles/
-c++/AutorunLibrary/AutorunLibrary-build/Makefile
-c++/AutorunLibrary/AutorunLibrary-build/cmake_install.cmake
-c++/AutorunLibrary/AutorunLibrary-build/install_manifest.txt
+c++/AutorunLibrary-build/
