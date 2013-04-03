@@ -31,9 +31,20 @@ namespace DatabaseMaker
 
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
         {
-            //Database.Instance.OpenConnection();
-            //Database.Instance.Category.Delete(6);
-            //Database.Instance.CloseConnection();
+            try
+            {
+                Database.Instance.OpenConnection();
+
+                cmbItemCategory.ItemsSource = Database.Instance.Category.Select();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Database.Instance.CloseConnection();
+            }
         }
 
         private void btnBrowsePlatformImage_Click(object sender, RoutedEventArgs e)
@@ -159,6 +170,81 @@ namespace DatabaseMaker
                 System.IO.FileInfo f = new System.IO.FileInfo(dlg.FileName);
                 txtItemFileSize.Text = f.Length.ToString();
                 txtItemPath.Text = f.Name;
+            }
+        }
+
+        private void btnRefreshCategories_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Database.Instance.OpenConnection();
+
+                cmbItemCategory.ItemsSource = Database.Instance.Category.Select();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Database.Instance.CloseConnection();
+            }
+        }
+
+        private void btnInsertItem_Click(object sender, RoutedEventArgs e)
+        {
+            ItemTableAdapter.Row row = new ItemTableAdapter.Row();
+
+            row.Name = txtItemName.Text;
+            row.Description = txtItemDescription.Text;
+            row.Icon = System.IO.File.ReadAllBytes(fileItemIcon);
+            row.Category = (cmbItemCategory.SelectedItem as CategoryTableAdapter.Row).ID;
+            row.Image = System.IO.File.ReadAllBytes(fileItemImage);
+            row.Version = txtItemVersion.Text;
+            row.FileSize = float.Parse(txtItemFileSize.Text);
+            row.Disk = Convert.ToInt32(txtItemDisk.Text);
+            row.Path = txtItemPath.Text;
+            row.Help = txtItemHelp.Text;
+            row.Tags = txtItemTags.Text;
+
+            try
+            {
+                Database.Instance.OpenConnection();
+
+                int id = Database.Instance.Item.Insert(row);
+
+                if (chkWindowsXp.IsChecked.Value)
+                    Database.Instance.ItemPlatform.Insert(id, 1);
+                if (chkWindows7.IsChecked.Value)
+                    Database.Instance.ItemPlatform.Insert(id, 2);
+                if (chkWindows8.IsChecked.Value)
+                    Database.Instance.ItemPlatform.Insert(id, 3);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Database.Instance.CloseConnection();
+            }
+        }
+
+        private void btnSelectItem_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Database.Instance.OpenConnection();
+
+                grdItem.ItemsSource = Database.Instance.Item.Select();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Database.Instance.CloseConnection();
             }
         }
     }

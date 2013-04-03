@@ -24,7 +24,7 @@ namespace DatabaseMaker
         public ItemPlatformTableAdapter(FbConnection connection)
         {
             deleteCommand = "DELETE FROM item_platform WHERE item_id=@item_id AND platform_id=@plat_id";
-            insertCommand = "INSERT INTO platform (ITEM_ID,PLATFORM_ID)" +
+            insertCommand = "INSERT INTO item_platform (ITEM_ID,PLATFORM_ID)" +
                             "VALUES (@item_id,@plat_id)";
             selectCommand = "SELECT * FROM item_platform";
 

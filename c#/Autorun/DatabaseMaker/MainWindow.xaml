@@ -24,7 +24,7 @@
                     <Label Content="Name" />
                     <TextBox x:Name="txtCategoryName" />
                     <Label Content="Description" />
-                    <TextBox x:Name="txtCategoryDescription" TextWrapping="Wrap" Height="90" />
+                    <TextBox x:Name="txtCategoryDescription" TextWrapping="Wrap" Height="90" AcceptsReturn="True" FlowDirection="RightToLeft" />
                     <Label Content="Image" />
                     <Image x:Name="imgCategoryImage" Height="45" />
                     <Button x:Name="btnBrowseCategoryImage" Content="Browse" Click="btnBrowseCategoryImage_Click" />
@@ -40,13 +40,19 @@
                     <Label Content="Name" />
                     <TextBox x:Name="txtItemName"/>
                     <Label Content="Description" />
-                    <TextBox x:Name="txtItemDescription" TextWrapping="Wrap" Height="90" />
+                    <TextBox x:Name="txtItemDescription" TextWrapping="Wrap" Height="90" FlowDirection="RightToLeft" AcceptsReturn="True" />
                     <Label Content="Icon" />
                     <Image x:Name="imgItemIcon" Height="45" />
                     <Button x:Name="btnBrowseItemIcon" Content="Browse" Click="btnBrowseItemIcon_Click" />
                     <Label Content="Category" />
-                    <ComboBox x:Name="lstItemCategory" />
-                    <Button x:Name="btnRefreshCategories" Content="Refresh" />
+                    <ComboBox x:Name="cmbItemCategory" DisplayMemberPath="Name" />
+                    <Label Content="Platforms" />
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox x:Name="chkWindowsXp" IsChecked="True" Content="Windows XP" Margin="10,0,0,0" />
+                        <CheckBox x:Name="chkWindows7" IsChecked="True" Content="Windows 7" Margin="10,0,0,0" />
+                        <CheckBox x:Name="chkWindows8" IsChecked="True" Content="Windows 8" Margin="10,0,0,0" />
+                    </StackPanel>
+                    <Button x:Name="btnRefreshCategories" Content="Refresh" Click="btnRefreshCategories_Click" />
                     <Label Content="Image" />
                     <Image x:Name="imgItemImage" Height="45" />
                     <Button x:Name="btnBrowseItemImage" Content="Browse" Click="btnBrowseItemImage_Click" />
@@ -60,11 +66,11 @@
                     <TextBox x:Name="txtItemPath" />
                     <Button x:Name="btnBrowseItemPath" Content="Browse" Click="btnBrowseItemPath_Click" />
                     <Label Content="Help" />
-                    <TextBox x:Name="txtItemHelp" TextWrapping="Wrap" Height="90" />
+                    <TextBox x:Name="txtItemHelp" TextWrapping="Wrap" Height="90" AcceptsReturn="True" />
                     <Label Content="Tags" />
                     <TextBox x:Name="txtItemTags" TextWrapping="Wrap" Height="90" />
-                    <Button x:Name="btnInsertItem" Content="Insert" />
-                    <Button x:Name="btnSelectItem" Content="Select" />
+                    <Button x:Name="btnInsertItem" Content="Insert" Click="btnInsertItem_Click" />
+                    <Button x:Name="btnSelectItem" Content="Select" Click="btnSelectItem_Click" />
                     <DataGrid x:Name="grdItem" />
                 </StackPanel>
             </ScrollViewer>
