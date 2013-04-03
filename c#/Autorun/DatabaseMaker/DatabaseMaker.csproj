@@ -70,6 +70,8 @@
     </Compile>
     <Compile Include="CategoryTableAdapter.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="ItemPlatformTableAdapter.cs" />
+    <Compile Include="ItemTableAdapter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

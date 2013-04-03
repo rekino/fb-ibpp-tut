@@ -15,13 +15,25 @@ namespace DatabaseMaker
 
         PlatformTableAdapter platform;
         CategoryTableAdapter category;
+        ItemTableAdapter item;
+        ItemPlatformTableAdapter itemPlatform;
 
-        internal CategoryTableAdapter Category
+        internal ItemPlatformTableAdapter ItemPlatform
+        {
+            get { return itemPlatform; }
+        }
+
+        internal ItemTableAdapter Item
+        {
+            get { return item; }
+        }
+
+        public CategoryTableAdapter Category
         {
             get { return category; }
         }
 
-        internal PlatformTableAdapter Platform
+        public PlatformTableAdapter Platform
         {
             get { return platform; }
         }
@@ -39,6 +51,8 @@ namespace DatabaseMaker
 
             platform = new PlatformTableAdapter(connection);
             category = new CategoryTableAdapter(connection);
+            item = new ItemTableAdapter(connection);
+            itemPlatform = new ItemPlatformTableAdapter(connection);
         }
 
         public void OpenConnection()

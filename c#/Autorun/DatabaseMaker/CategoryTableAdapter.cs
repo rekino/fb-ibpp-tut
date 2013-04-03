@@ -39,7 +39,7 @@ namespace DatabaseMaker
 
             FbCommand cmd = new FbCommand(insertCommand, connection, transaction);
             cmd.Parameters.Add("@name", FbDbType.VarChar);
-            cmd.Parameters.Add("@description", FbDbType.Binary);
+            cmd.Parameters.Add("@description", FbDbType.Text);
             cmd.Parameters.Add("@image", FbDbType.Binary);
 
             cmd.Parameters[0].Value = name;
